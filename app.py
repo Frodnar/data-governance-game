@@ -105,6 +105,7 @@ def main():
     # Step 1 - Directions
     if st.session_state.step == 1:
         st.title("Date Data Dash")
+        st.image("images/cover.webp")
         st.header("Instructions:")
         st.markdown("""
                     - Carefully read and follow the instructions for each step of the following data entry game.
@@ -204,5 +205,11 @@ def main():
                                        )
         st.dataframe(df, hide_index=True)
 
+        if st.session_state.stress_w_formatting < st.session_state.stress_no_formatting:
+            st.markdown("Congratulations!  You've successfully demonstrated that good **data governance practices can reduce stress** and be implemented simply.")
+        else:
+            st.markdown("Unfortunately, data governance principles did not reduce your stress this time, but we hope you see how they made the sorting analysis easier.")
+        
+        st.header("Thank you for playing!")
 if __name__ == "__main__":
     main()
